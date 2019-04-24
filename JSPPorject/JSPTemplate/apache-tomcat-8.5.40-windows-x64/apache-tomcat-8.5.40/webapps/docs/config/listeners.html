@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.40) - The LifeCycle Listener Component</title><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/listeners">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.0.36) - The LifeCycle Listener Component</title><script type="application/javascript" data-comments-identifier="tomcat-8.0-doc/config/listeners">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -11,7 +11,7 @@
       document.addEventListener("DOMContentLoaded", (function() {
         var commentsDiv = document.getElementById("comments_thread");
         var commentsShortname = "tomcat";
-        var commentsIdentifier = "https://tomcat.apache.org/" +
+        var commentsIdentifier = "http://tomcat.apache.org/" +
           thisScript.getAttribute("data-comments-identifier") + ".html";
 
         (function(w, d) {
@@ -29,10 +29,10 @@
         })(window, document);
       }), false);
     })();
-  </script></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home" src="../images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img src="../images/asf-logo.svg" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tomcat 8 Configuration Reference</h1><div class="versionInfo">
-          Version 8.5.40,
-          <time datetime="2019-04-10">Apr 10 2019</time></div><div style="height: 1px;"></div><div style="clear: left;"></div></div></div></div></header><div id="middle"><div><div id="mainLeft" class="noprint"><div><nav><div><h2>Links</h2><ul><li><a href="../index.html">Docs Home</a></li><li><a href="index.html">Config Ref. Home</a></li><li><a href="https://wiki.apache.org/tomcat/FAQ">FAQ</a></li><li><a href="#comments_section">User Comments</a></li></ul></div><div><h2>Top Level Elements</h2><ul><li><a href="server.html">Server</a></li><li><a href="service.html">Service</a></li></ul></div><div><h2>Executors</h2><ul><li><a href="executor.html">Executor</a></li></ul></div><div><h2>Connectors</h2><ul><li><a href="http.html">HTTP/1.1</a></li><li><a href="http2.html">HTTP/2</a></li><li><a href="ajp.html">AJP</a></li></ul></div><div><h2>Containers</h2><ul><li><a href="context.html">Context</a></li><li><a href="engine.html">Engine</a></li><li><a href="host.html">Host</a></li><li><a href="cluster.html">Cluster</a></li></ul></div><div><h2>Nested Components</h2><ul><li><a href="cookie-processor.html">CookieProcessor</a></li><li><a href="credentialhandler.html">CredentialHandler</a></li><li><a href="globalresources.html">Global Resources</a></li><li><a href="jar-scanner.html">JarScanner</a></li><li><a href="jar-scan-filter.html">JarScanFilter</a></li><li><a href="listeners.html">Listeners</a></li><li><a href="loader.html">Loader</a></li><li><a href="manager.html">Manager</a></li><li><a href="realm.html">Realm</a></li><li><a href="resources.html">Resources</a></li><li><a href="sessionidgenerator.html">SessionIdGenerator</a></li><li><a href="valve.html">Valve</a></li></ul></div><div><h2>Cluster Elements</h2><ul><li><a href="cluster.html">Cluster</a></li><li><a href="cluster-manager.html">Manager</a></li><li><a href="cluster-channel.html">Channel</a></li><li><a href="cluster-membership.html">Channel/Membership</a></li><li><a href="cluster-sender.html">Channel/Sender</a></li><li><a href="cluster-receiver.html">Channel/Receiver</a></li><li><a href="cluster-interceptor.html">Channel/Interceptor</a></li><li><a href="cluster-valve.html">Valve</a></li><li><a href="cluster-deployer.html">Deployer</a></li><li><a href="cluster-listener.html">ClusterListener</a></li></ul></div><div><h2>web.xml</h2><ul><li><a href="filter.html">Filter</a></li></ul></div><div><h2>Other</h2><ul><li><a href="systemprops.html">System properties</a></li><li><a href="jaspic.html">JASPIC</a></li></ul></div></nav></div></div><div id="mainRight"><div id="content"><h2>The LifeCycle Listener Component</h2><h3 id="Table_of_Contents">Table of Contents</h3><div class="text">
-<ul><li><a href="#Introduction">Introduction</a></li><li><a href="#Attributes">Attributes</a><ol><li><a href="#Common_Attributes">Common Attributes</a></li></ol></li><li><a href="#Nested_Components">Nested Components</a></li><li><a href="#Standard_Implementations">Standard Implementations</a><ol><li><a href="#APR_Lifecycle_Listener_-_org.apache.catalina.core.AprLifecycleListener">APR Lifecycle Listener - org.apache.catalina.core.AprLifecycleListener</a></li><li><a href="#Global_Resources_Lifecycle_Listener_-_org.apache.catalina.mbeans.GlobalResourcesLifecycleListener">Global Resources Lifecycle Listener - org.apache.catalina.mbeans.GlobalResourcesLifecycleListener</a></li><li><a href="#JNI_Library_Loading_Listener_-_org.apache.catalina.core.JniLifecycleListener">JNI Library Loading Listener - org.apache.catalina.core.JniLifecycleListener</a></li><li><a href="#JRE_Memory_Leak_Prevention_Listener_-_org.apache.catalina.core.JreMemoryLeakPreventionListener">JRE Memory Leak Prevention Listener - org.apache.catalina.core.JreMemoryLeakPreventionListener</a><ol><li><a href="#JreMemoryLeakPreventionListener_Examples">JreMemoryLeakPreventionListener Examples</a></li></ol></li><li><a href="#Security_Lifecycle_Listener_-_org.apache.catalina.security.SecurityListener">Security Lifecycle Listener - org.apache.catalina.security.SecurityListener</a></li><li><a href="#StoreConfig_Lifecycle_Listener_-_org.apache.catalina.storeconfig.StoreConfigLifecycleListener">StoreConfig Lifecycle Listener - org.apache.catalina.storeconfig.StoreConfigLifecycleListener</a></li><li><a href="#ThreadLocal_Leak_Prevention_Listener_-_org.apache.catalina.core.ThreadLocalLeakPreventionListener">ThreadLocal Leak Prevention Listener - org.apache.catalina.core.ThreadLocalLeakPreventionListener</a></li><li><a href="#UserConfig_-_org.apache.catalina.startup.UserConfig">UserConfig - org.apache.catalina.startup.UserConfig</a></li><li><a href="#Version_Logging_Lifecycle_Listener_-_org.apache.catalina.startup.VersionLoggerListener">Version Logging Lifecycle Listener - org.apache.catalina.startup.VersionLoggerListener</a></li></ol></li><li><a href="#Additional_Implementations">Additional Implementations</a><ol><li><a href="#JMX_Remote_Lifecycle_Listener_-_org.apache.catalina.mbeans.JmxRemoteLifecycleListener">JMX Remote Lifecycle Listener - org.apache.catalina.mbeans.JmxRemoteLifecycleListener</a></li><li><a href="#System_property_replacement_-_org.apache.catalina.util.SystemPropertyReplacerListener">System property replacement - org.apache.catalina.util.SystemPropertyReplacerListener</a></li></ol></li></ul>
+  </script></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="http://tomcat.apache.org/"><img alt="Tomcat Home" src="../images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="http://www.apache.org/" target="_blank"><img src="../images/asf-feather.png" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tomcat 8 Configuration Reference</h1><div class="versionInfo">
+          Version 8.0.36,
+          <time datetime="2016-06-09">Jun 9 2016</time></div><div style="height: 1px;"></div><div style="clear: left;"></div></div></div></div></header><div id="middle"><div><div id="mainLeft" class="noprint"><div><nav><div><h2>Links</h2><ul><li><a href="../index.html">Docs Home</a></li><li><a href="index.html">Config Ref. Home</a></li><li><a href="http://wiki.apache.org/tomcat/FAQ">FAQ</a></li><li><a href="#comments_section">User Comments</a></li></ul></div><div><h2>Top Level Elements</h2><ul><li><a href="server.html">Server</a></li><li><a href="service.html">Service</a></li></ul></div><div><h2>Executors</h2><ul><li><a href="executor.html">Executor</a></li></ul></div><div><h2>Connectors</h2><ul><li><a href="http.html">HTTP</a></li><li><a href="ajp.html">AJP</a></li></ul></div><div><h2>Containers</h2><ul><li><a href="context.html">Context</a></li><li><a href="engine.html">Engine</a></li><li><a href="host.html">Host</a></li><li><a href="cluster.html">Cluster</a></li></ul></div><div><h2>Nested Components</h2><ul><li><a href="cookie-processor.html">CookieProcessor</a></li><li><a href="credentialhandler.html">CredentialHandler</a></li><li><a href="globalresources.html">Global Resources</a></li><li><a href="jar-scanner.html">JarScanner</a></li><li><a href="jar-scan-filter.html">JarScanFilter</a></li><li><a href="listeners.html">Listeners</a></li><li><a href="loader.html">Loader</a></li><li><a href="manager.html">Manager</a></li><li><a href="realm.html">Realm</a></li><li><a href="resources.html">Resources</a></li><li><a href="sessionidgenerator.html">SessionIdGenerator</a></li><li><a href="valve.html">Valve</a></li></ul></div><div><h2>Cluster Elements</h2><ul><li><a href="cluster.html">Cluster</a></li><li><a href="cluster-manager.html">Manager</a></li><li><a href="cluster-channel.html">Channel</a></li><li><a href="cluster-membership.html">Channel/Membership</a></li><li><a href="cluster-sender.html">Channel/Sender</a></li><li><a href="cluster-receiver.html">Channel/Receiver</a></li><li><a href="cluster-interceptor.html">Channel/Interceptor</a></li><li><a href="cluster-valve.html">Valve</a></li><li><a href="cluster-deployer.html">Deployer</a></li><li><a href="cluster-listener.html">ClusterListener</a></li></ul></div><div><h2>web.xml</h2><ul><li><a href="filter.html">Filter</a></li></ul></div><div><h2>Other</h2><ul><li><a href="systemprops.html">System properties</a></li></ul></div></nav></div></div><div id="mainRight"><div id="content"><h2>The LifeCycle Listener Component</h2><h3 id="Table_of_Contents">Table of Contents</h3><div class="text">
+<ul><li><a href="#Introduction">Introduction</a></li><li><a href="#Attributes">Attributes</a><ol><li><a href="#Common_Attributes">Common Attributes</a></li></ol></li><li><a href="#Nested_Components">Nested Components</a></li><li><a href="#Standard_Implementations">Standard Implementations</a><ol><li><a href="#APR_Lifecycle_Listener_-_org.apache.catalina.core.AprLifecycleListener">APR Lifecycle Listener - org.apache.catalina.core.AprLifecycleListener</a></li><li><a href="#Global_Resources_Lifecycle_Listener_-_org.apache.catalina.mbeans.GlobalResourcesLifecycleListener">Global Resources Lifecycle Listener - org.apache.catalina.mbeans.GlobalResourcesLifecycleListener</a></li><li><a href="#JRE_Memory_Leak_Prevention_Listener_-_org.apache.catalina.core.JreMemoryLeakPreventionListener">JRE Memory Leak Prevention Listener - org.apache.catalina.core.JreMemoryLeakPreventionListener</a></li><li><a href="#Security_Lifecycle_Listener_-_org.apache.catalina.security.SecurityListener">Security Lifecycle Listener - org.apache.catalina.security.SecurityListener</a></li><li><a href="#StoreConfig_Lifecycle_Listener_-_org.apache.catalina.storeconfig.StoreConfigLifecycleListener">StoreConfig Lifecycle Listener - org.apache.catalina.storeconfig.StoreConfigLifecycleListener</a></li><li><a href="#ThreadLocal_Leak_Prevention_Listener_-_org.apache.catalina.core.ThreadLocalLeakPreventionListener">ThreadLocal Leak Prevention Listener - org.apache.catalina.core.ThreadLocalLeakPreventionListener</a></li><li><a href="#UserConfig_-_org.apache.catalina.startup.UserConfig">UserConfig - org.apache.catalina.startup.UserConfig</a></li><li><a href="#Version_Logging_Lifecycle_Listener_-_org.apache.catalina.startup.VersionLoggerListener">Version Logging Lifecycle Listener - org.apache.catalina.startup.VersionLoggerListener</a></li></ol></li><li><a href="#Additional_Implementations">Additional Implementations</a><ol><li><a href="#JMX_Remote_Lifecycle_Listener_-_org.apache.catalina.mbeans.JmxRemoteLifecycleListener">JMX Remote Lifecycle Listener - org.apache.catalina.mbeans.JmxRemoteLifecycleListener</a></li></ol></li></ul>
 </div><h3 id="Introduction">Introduction</h3><div class="text">
 
   <p>A <strong>Listener</strong> element defines a component that performs
@@ -117,16 +117,6 @@
         If this attribute is set to any of the above values, the <b>SSLEngine</b>
         must be enabled as well.</p>
         <p>The default value is <code>off</code>.</p>
-      </td></tr><tr><td><code class="attributeName">useAprConnector</code></td><td>
-        <p>This attribute controls the auto-selection of the connector
-        implementation. When the <strong>protocol</strong> is specified as
-        <code>HTTP/1.1</code> or <code>AJP/1.3</code> then if this attribute is
-        <code>true</code> the APR/native connector will be used but if this
-        attribute is false the NIO connector will be used.</p>
-      </td></tr><tr><td><code class="attributeName">useOpenSSL</code></td><td>
-        <p>This attribute controls the auto-selection of the OpenSSL JSSE
-        implementation. The default is <code>true</code> which will use OpenSSL
-        if the native library is available and a NIO or NIO2 connector is used.</p>
       </td></tr></table>
 
   </div></div>
@@ -143,30 +133,6 @@
     <p>No additional attributes are supported by the <strong>Global Resources
     Lifecycle Listener</strong>.</p>
 
-  </div></div>
-
-  <div class="subsection"><h4 id="JNI_Library_Loading_Listener_-_org.apache.catalina.core.JniLifecycleListener">JNI Library Loading Listener - org.apache.catalina.core.JniLifecycleListener</h4><div class="text">
-
-    <p>The <strong>JNI Library Loading Listener</strong> makes it possible
-    for multiple Webapps to use a native library, by loading the native
-    library using a shared class loader (typically the Common class loader but
-    may vary in some configurations)</p>
-
-    <p>The listener supports two mutually exclusive attributes, so one of them must be used, but you can not use both together:</p>
-
-    <table class="defaultTable"><tr><th style="width: 15%;">
-          Attribute
-        </th><th style="width: 85%;">
-          Description
-        </th></tr><tr><td><code class="attributeName">libraryName</code></td><td>
-        <p>The name of the native library, as defined in
-        <code>java.lang.System.loadLibrary()</code>
-        </p>
-      </td></tr><tr><td><code class="attributeName">libraryPath</code></td><td>
-        <p>The absolute path of the native library, as defined in
-        <code>java.lang.System.load()</code>
-        </p>
-      </td></tr></table>
   </div></div>
 
   <div class="subsection"><h4 id="JRE_Memory_Leak_Prevention_Listener_-_org.apache.catalina.core.JreMemoryLeakPreventionListener">JRE Memory Leak Prevention Listener - org.apache.catalina.core.JreMemoryLeakPreventionListener</h4><div class="text">
@@ -196,16 +162,12 @@
         application do not result in a memory leak. Note that enabling this
         protection will trigger a requirement for a graphical environment unless
         Java is started in head-less mode. The default is <code>false</code>.
-        This protection is disabled if running on Java 8 onwards since the leak
-        has been fixed for Java 8 onwards.
         </p>
       </td></tr><tr><td><code class="attributeName">AWTThreadProtection</code></td><td>
         <p>Enables protection so that calls to
         <code>java.awt.Toolkit.getDefaultToolkit()</code> triggered by a web
         application do not result in a memory leak.
-        Defaults to <code>false</code> because an AWT thread is launched. This
-        protection is disabled if running on Java 9 onwards since the leak has
-        been fixed for Java 9 onwards.</p>
+        Defaults to <code>false</code> because an AWT thread is launched.</p>
       </td></tr><tr><td><code class="attributeName">classesToInitialize</code></td><td>
         <p>List of comma-separated fully qualified class names to load and initialize
         during the startup of this Listener. This allows to pre-load classes that are
@@ -216,20 +178,10 @@
         protection features managed by other attributes of this Listener.</p>
       </td></tr><tr><td><code class="attributeName">driverManagerProtection</code></td><td>
         <p>The first use of <code>java.sql.DriverManager</code> will trigger the
-        loading of JDBC Drivers visible to the current class loader and its
-        parents. The web application level memory leak protection can take care
-        of this in most cases but triggering the loading here has fewer
-        side-effects. The default is <code>true</code>.</p>
-      </td></tr><tr><td><code class="attributeName">forkJoinCommonPoolProtection</code></td><td>
-        <p>Enables protection so the threads created for
-        <code>ForkJoinPool.commonPool()</code> do not result in a memory leak.
-        The protection is enabled by setting the
-        <code>java.util.concurrent.ForkJoinPool.common.threadFactory</code>
-        system property. If this property is set when Tomcat starts, Tomcat will
-        not over-ride it even if this protection is explicitly enabled. The
-        default is <code>true</code>. This protection is only used when running
-        on Java 8. The common pool does not exist in earlier versions and the
-        leak has been fixed for Java 9 onwards.</p>
+        loading of JDBC Driver in the current class loader. The web
+        application level memory leak protection can take care of this in most
+        cases but triggering the loading here has fewer side-effects. The
+        default is <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">gcDaemonProtection</code></td><td>
         <p>Enables protection so that calls to
         <code>sun.misc.GC.requestLatency(long)</code> triggered by a web
@@ -237,9 +189,7 @@
         trigger a call to this method. A side effect of enabling this protection
         is the creation of a thread named "GC Daemon". The protection uses
         reflection to access internal Sun classes and may generate errors on
-        startup on non-Sun JVMs. The default is <code>true</code>. This
-        protection is disabled if running on Java 9 onwards since the leak has
-        been fixed for Java 9 onwards.</p>
+        startup on non-Sun JVMs. The default is <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">ldapPoolProtection</code></td><td>
         <p>Enables protection so that the PoolCleaner thread started by
         <code>com.sun.jndi.ldap.LdapPoolManager</code> does not result in a
@@ -250,8 +200,7 @@
         class the PoolCleaner thread will be configured with the thread's
         context class loader set to the web application class loader which in
         turn will trigger a memory leak on reload. Defaults to
-        <code>true</code>. This protection is disabled if running on Java 9
-        onwards since the leak has been fixed for Java 9 onwards.</p>
+        <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">securityLoginConfigurationProtection</code></td><td>
         <p>Enables protection so that usage of the
         <code>javax.security.auth.login.Configuration</code> class by a web
@@ -259,20 +208,18 @@
         class will trigger the initializer that will retain a static reference
         to the context class loader. The protection loads the class with the
         system class loader to ensure that the static initializer is not
-        triggered by a web application. Defaults to <code>true</code>. This
-        protection is disabled if running on Java 8 onwards since the leak has
-        been fixed for Java 8 onwards.</p>
+        triggered by a web application. Defaults to <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">securityPolicyProtection</code></td><td>
         <p>Enables protection so that usage of the deprecated
-        <code>javax.security.auth.Policy</code> class by a web application does
-        not result in a memory leak. The first access of this class will trigger
-        the static initializer that will retain a static reference to the
-        context class loader. The protection calls the <code>getPolicy()</code>
-        method of this class to ensure that the static initializer is not
-        triggered by a web application. Defaults to <code>true</code>.</p>
+        <code>javax.security.auth.Policy</code> class by a web application does not
+        result in a memory leak. The first access of this class will trigger the
+        static initializer that will retain a static reference to the context
+        class loader. The protection calls the <code>getPolicy()</code> method
+        of this class to ensure that the static initializer is not triggered by
+        a web application. Defaults to <code>true</code>.</p>
         <p>Note: The underlying leak has been fixed in Java 7 update 51 onwards
-        and Java 8 onwards. This protection is therefor disabled if running on
-        Java 8 onwards.</p>
+        and Java 8 onwards. This option is unnecessary if running on a fixed
+        version of Java.</p>
       </td></tr><tr><td><code class="attributeName">tokenPollerProtection</code></td><td>
         <p>Enables protection so that any token poller thread initialized by
         <code>sun.security.pkcs11.SunPKCS11.initToken()</code> does not
@@ -282,9 +229,7 @@
         deployment when the MessageDigest for generating session IDs is
         initialized. As a result the thread has the Webapp class loader as its
         thread context class loader. Enabling the protection initializes JCA
-        early during Tomcat startup. Defaults to <code>true</code>. This
-        protection is disabled if running on Java 9 onwards since the leak has
-        been fixed for Java 9 onwards.</p>
+        early during Tomcat startup. Defaults to <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">urlCacheProtection</code></td><td>
         <p>Enables protection so that reading resources from JAR files using
         <code>java.net.URLConnection</code>s does not result in the JAR file
@@ -296,26 +241,8 @@
         <p>Enables protection so that parsing XML files within a web application
         does not result in a memory leak. Note that memory profilers may not
         display the GC root associated with this leak making it particularly
-        hard to diagnose. Defaults to <code>true</code>. This protection is
-        disabled if running on Java 9 onwards since the leak has been fixed for
-        Java 9 onwards.</p>
+        hard to diagnose. Defaults to <code>true</code>.</p>
       </td></tr></table>
-
-    <div class="subsection"><h4 id="JreMemoryLeakPreventionListener_Examples">JreMemoryLeakPreventionListener Examples</h4><div class="text">
-
-      <p>The following is an example of how to configure the
-      <code>classesToInitialize</code> attribute of this listener.</p>
-
-      <p>If this listener was configured in server.xml as:</p>
-
-      <div class="codeBox"><pre><code>  &lt;Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"
-            classesToInitialize="oracle.jdbc.driver.OracleTimeoutThreadPerVM" /&gt;</code></pre></div>
-
-      <p>then the <code>OracleTimeoutThreadPerVM</code> class would be loaded
-      and initialized during listener startup instead of during request
-      processing.</p>
-
-    </div></div>
 
   </div></div>
 
@@ -324,11 +251,9 @@
     <p>The <strong>Security Lifecycle Listener</strong> performs a number of
     security checks when Tomcat starts and prevents Tomcat from starting if they
     fail. The listener is not enabled by default. To enabled it uncomment the
-    listener in $CATALINA_BASE/conf/server.xml. For Tomcat versions before 8.5.30,
-    if the operating system supports umask then the line in
-    $CATALINA_HOME/bin/catalina.sh that obtains the umask also needs to be
-    uncommented. For Tomcat 8.5.30 and later, the umask is automatically
-    passed-into Tomcat.</p>
+    listener in $CATALINA_BASE/conf/server.xml. If the operating system supports
+    umask then the line in $CATALINA_HOME/bin/catalina.sh that obtains the umask
+    also needs to be uncommented.</p>
 
     <p>This listener must only be nested within <a href="server.html">Server</a>
     elements.</p>
@@ -376,7 +301,7 @@
         not specified the default of
         <code>org.apache.catalina.storeconfig.StoreConfig</code> will be
         used.</p>
-      </td></tr><tr><td><code class="attributeName">storeRegistry</code></td><td>
+      </td></tr><tr><td><code class="attributeName">storeRegsitry</code></td><td>
         <p>The URL of the configuration file that configures how the
         <code>IStoreConfig</code> is to save the configuration. If not specified
         the built in resource
@@ -575,27 +500,18 @@
 
   </div></div>
 
-  <div class="subsection"><h4 id="System_property_replacement_-_org.apache.catalina.util.SystemPropertyReplacerListener">System property replacement - org.apache.catalina.util.SystemPropertyReplacerListener</h4><div class="text">
-
-    <p>This listener performs system property replacement using the property
-     source configured on the digester. When <code>${parameter}</code>
-     denoted parameters are found in the values of system properties,
-     the property source will be invoked to attempt to replace it.</p>
-
-  </div></div>
-
 </div><div class="noprint"><h3 id="comments_section">
                   Comments
-                </h3><div class="text"><p class="notice"><strong>Notice:</strong> This comments section collects your suggestions
+                </h3><div class="text"><p class="notice"><strong>Notice: </strong>This comments section collects your suggestions
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
-                    <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
+                    <a href="http://tomcat.apache.org/findhelp.html">Find Help</a> page
                     and ask your question on the tomcat-users
-                    <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
+                    <a href="http://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.
                     Comments may be removed by our moderators if they are either
                     implemented or considered invalid/off-topic.
                   </p><div id="comments_thread"></div></div></div></div></div></div></div><footer><div id="footer">
-    Copyright &copy; 1999-2019, The Apache Software Foundation
+    Copyright &copy; 1999-2016, The Apache Software Foundation
   </div></footer></div></body></html>
