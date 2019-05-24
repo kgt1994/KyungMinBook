@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.timmy.kyungminbook.dao.MemberDAO"/>
+<fullyQualifiedTypeName name="com.timmy.kyungminbook.mapper.MemberMapper"/>
+<fullyQualifiedTypeName name="com.timmy.kyungminbook.service.MemberServiceImpl"/>
+<fullyQualifiedTypeName name="com.timmy.kyungminbook.service.MemberService"/>
+</qualifiedTypeNameHistroy>

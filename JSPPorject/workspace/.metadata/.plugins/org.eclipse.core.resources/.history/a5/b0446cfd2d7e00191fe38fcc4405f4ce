@@ -1,0 +1,37 @@
+package com.timmy.kyungminbook.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.timmy.kyungminbook.dao.MemberDAO;
+import com.timmy.kyungminbook.model.MemberDTO;
+
+@Service("MemberService")
+public class MemberServiceImpl implements MemberService{
+	@Autowired
+	private MemberDAO dao;
+	
+	@Override
+	public void selectMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void insertMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		dao.insertMember(dto);
+	}
+
+	@Override
+	public void updateMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		dao.updateMember(dto);
+	}
+
+	@Override
+	public void deleteMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		dao.deleteMember(dto);
+	}
+
+}

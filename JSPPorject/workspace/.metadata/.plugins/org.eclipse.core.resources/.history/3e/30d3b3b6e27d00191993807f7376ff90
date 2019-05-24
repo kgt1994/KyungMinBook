@@ -1,0 +1,8 @@
+package com.timmy.kyungminbook.mapper;
+
+import com.timmy.kyungminbook.model.MemberDTO;
+
+public interface MemberMapper {
+	public void insertMember(MemberDTO dto);
+	public MemberDTO selectMember(int id);
+}

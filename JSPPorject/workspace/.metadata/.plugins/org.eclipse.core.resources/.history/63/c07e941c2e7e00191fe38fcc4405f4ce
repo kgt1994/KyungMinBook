@@ -1,0 +1,36 @@
+package com.timmy.kyungminbook.dao;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.timmy.kyungminbook.mapper.MemberMapper;
+import com.timmy.kyungminbook.model.MemberDTO;
+import com.timmy.kyungminbook.service.MemberService;
+
+@Repository
+public class MemberDAO implements MemberService{
+	@Autowired
+	private SqlSessionTemplate mybatis;
+	
+	public void insertMember(MemberDTO dto) {
+		System.out.println("insert Member() 처리");
+		//mybatis.insert("MemberService.insertMember", dto);
+		MemberMapper member = mybatis.getMapper(MemberMapper.class);
+		member.insertMember(dto);
+	}
+	
+	public void updateMember(MemberDTO dto) {
+		mybatis.update("MemberService.updateMember", dto);
+	}
+	
+	public void deleteMember(MemberDTO dto) {
+		mybatis.delete("MemberService.deleteMember", dto);
+	}
+
+	@Override
+	public void selectMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
+}

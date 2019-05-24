@@ -1,0 +1,25 @@
+package com.timmy.kyungminbook.dao;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.timmy.kyungminbook.model.MemberDTO;
+
+@Repository
+public class MemberDAO {
+	@Autowired
+	private SqlSessionTemplate mybatis;
+	
+	public void insertMember(MemberDTO dto) {
+		mybatis.insert("MemberService.insertMember", dto);
+	}
+	
+	public void updateMember(MemberDTO dto) {
+		mybatis.update("MemberService.updateMember", dto);
+	}
+	
+	public void deleteMember(MemberDTO dto) {
+		mybatis.delete("MemberService.deleteMember", dto);
+	}
+}
