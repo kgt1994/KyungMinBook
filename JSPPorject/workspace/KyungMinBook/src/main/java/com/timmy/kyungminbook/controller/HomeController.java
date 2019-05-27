@@ -19,11 +19,6 @@ public class HomeController {
 	@Autowired
 	MemberService MemberService;
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(Locale locale, Model model) {
-		return "index";
-	}
-	
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
 	public String join(Locale locale, Model model) {
 		return "join";
@@ -39,6 +34,6 @@ public class HomeController {
 		*/
 		MemberService.insertMember(dto);
 		
-		return "index";
+		return "../../index";
 	}
 }

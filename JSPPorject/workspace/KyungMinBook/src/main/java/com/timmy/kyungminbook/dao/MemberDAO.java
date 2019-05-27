@@ -14,10 +14,6 @@ public class MemberDAO{
 	public void insertMember(MemberDTO dto) {
 		System.out.println("insert Member() 처리");
 		mybatis.insert("memberService.insertMember", dto);
-		/*
-		MemberMapper member = mybatis.getMapper(MemberMapper.class);
-		member.insertMember(dto);
-		*/
 	}
 	
 }
