@@ -4,4 +4,9 @@
 <fullyQualifiedTypeName name="com.timmy.kyungminbook.mapper.MemberMapper"/>
 <fullyQualifiedTypeName name="com.timmy.kyungminbook.service.MemberServiceImpl"/>
 <fullyQualifiedTypeName name="com.timmy.kyungminbook.service.MemberService"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="com.timmy.kyungminbook.dao.IMemberDAO"/>
+<fullyQualifiedTypeName name="com.timmy.kyungminbook.model.LoginDTO"/>
 </qualifiedTypeNameHistroy>

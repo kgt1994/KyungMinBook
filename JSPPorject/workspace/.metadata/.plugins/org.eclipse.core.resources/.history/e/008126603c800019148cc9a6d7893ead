@@ -1,0 +1,8 @@
+package com.timmy.kyungminbook.dao;
+
+import com.timmy.kyungminbook.model.MemberDTO;
+
+public interface IMemberDAO {
+	public void insertMember(MemberDTO dto);
+	public void selectMember(MemberDTO dto);
+}

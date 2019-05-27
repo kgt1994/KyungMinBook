@@ -3,15 +3,15 @@
 
 <mapper namespace="memberService" >
 
-	<select id="selectmember" parameterType="MemberDTO" resultType="">
-		SELECT *
-		FROM MEMBER
-		WHERE ID = #{id}
-	</select>
-
 	<insert id="insertMember" parameterType="MemberDTO">
 		INSERT INTO MEMBER(MEMBER_NUMBER, MEMBER_ID, MEMBER_PW, MEMBER_NAME, PHONE, GENDER, EMAIL)
 		VALUES ((SELECT NVL(MAX(MEMBER_NUMBER), 0) + 1 FROM MEMBER),#{id},#{pw},#{name},#{phone},#{gender},#{email})
 	</insert>
+	
+	<select id="selectMember" parameterType="LoginDTO" resultType="LoginDTO">
+		SELECT MEMBER_ID, MEMBER_NAME
+		FROM MEMBER
+		WHERE MEMBER_ID=#{member_id} AND MEMBER_PW=#{member_pw}
+	</select>
 
 </mapper>

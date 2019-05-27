@@ -5,7 +5,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.timmy.kyungminbook.model.MemberDTO" alias="MemberDTO"></typeAlias>
-		<typeAlias type="com.timmy.kyungminbook.service.MemberService" alias="memberService"></typeAlias>
+		<typeAlias type="com.timmy.kyungminbook.service.IMemberService" alias="memberService"></typeAlias>
+		<typeAlias type="com.timmy.kyungminbook.model.LoginDTO" alias="LoginDTO"></typeAlias>
 	</typeAliases>
 	
 	<mappers>

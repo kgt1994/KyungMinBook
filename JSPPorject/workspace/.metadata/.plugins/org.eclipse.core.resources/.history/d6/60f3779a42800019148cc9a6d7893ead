@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="com.timmy.kyungminbook.model.LoginDTO" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+Hello World~~!! <br>
+<a href=login.do>로그인</a>
+<a href=join.do>가입</a>
+<%
+LoginDTO dto = (LoginDTO)session.getAttribute("member");
+if(dto != null)
+	System.out.println(dto.getMember_name());
+%>
+</body>
+</html>
