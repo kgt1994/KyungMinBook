@@ -1,5 +1,0 @@
-package com.timmy.kyungminbook.dao;
-
-public interface IMemberDAO {
-
-}
