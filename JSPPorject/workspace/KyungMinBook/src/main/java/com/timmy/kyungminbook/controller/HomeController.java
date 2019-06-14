@@ -32,6 +32,34 @@ public class HomeController {
 	public String join(Locale locale, Model model) {
 		return "join";
 	}
+	@RequestMapping(value = "/fire.do", method = RequestMethod.GET)
+	public String fire(Locale locale, Model model) {
+		return "fire";
+	}
+	@RequestMapping(value = "/medic.do", method = RequestMethod.GET)
+	public String medic(Locale locale, Model model) {
+		return "medic";
+	}
+	@RequestMapping(value = "/soft.do", method = RequestMethod.GET)
+	public String soft(Locale locale, Model model) {
+		return "soft";
+	}
+	@RequestMapping(value = "/OldBook.do", method = RequestMethod.GET)
+	public String OldBook(Locale locale, Model model) {
+		return "OldBook";
+	}
+	@RequestMapping(value = "/ShoppingCart.do", method = RequestMethod.GET)
+	public String ShoppingCart(Locale locale, Model model) {
+		return "ShoppingCart";
+	}
+	@RequestMapping(value = "/write.do", method = RequestMethod.GET)
+	public String write(Locale locale, Model model) {
+		return "write";
+	}
+	@RequestMapping(value = "/board.do", method = RequestMethod.GET)
+	public String board(Locale locale, Model model) {
+		return "board";
+	}
 	
 	@RequestMapping(value = "/joinOk.do", method = RequestMethod.POST)
 	public String joinOk(MemberDTO dto) {
