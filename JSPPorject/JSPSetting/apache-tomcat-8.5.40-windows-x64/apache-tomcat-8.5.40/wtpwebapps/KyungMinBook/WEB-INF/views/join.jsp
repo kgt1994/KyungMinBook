@@ -1,22 +1,82 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
+    <%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>가입</title>
+    <meta charset="EUC-KR">
+    <title>경민북 쇼핑몰</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/responsive.css">
+    
 </head>
 <body>
-<form action="joinOk.do" method="post">
-ID : <input type="text" name="id" size="10"><br>
-PW : <input type="password" name="pw" size="10"><br> 
-이름 : <input type="text" name="name" size="10"><br>
-전화번호 : <input type="text" name="phone" size="15"><br>
-성별 : <input type="radio" name="gender" value="남자">남자&nbsp;
-	<input type="radio" name="gender" value="여자">여자<br>
-E-Mail : <input type="text" name="email" size="15"><br>
-<input type="submit" value="확인"">
-<input type="reset" value="취소">
-</form>
+<div class="container">
+	<div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">경민북 쇼핑몰</div>
+                           
+                        </div>  
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form">
+                                    
+                                
+                                  
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">이메일</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="fulltname" class="col-md-3 control-label">이름</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="fullname" placeholder="Full Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">비밀번호</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="passwd" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password2" class="col-md-3 control-label">비밀번호 재입력</label>
+                                    <div class="col-md-9">
+                                        <input type="password2" class="form-control" name="passwd2" placeholder="Repeat Password">
+                                    </div>
+                                </div>
+                                
+                               
+                                
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <div class="checkbox" data-pg-collapsed> 
+                                            <label class="control-label"> 
+                                                <input type="checkbox" value=""> 가입동의      
+                                            </label>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i>회원가입</button>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                         </div>
+                    </div>
+
+               
+               
+                
+         </div> 
 </body>
 </html>
