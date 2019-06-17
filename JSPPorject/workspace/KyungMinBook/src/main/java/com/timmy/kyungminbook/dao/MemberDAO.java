@@ -16,6 +16,7 @@ public class MemberDAO implements IMemberDAO{
 	public void insertMember(MemberDTO dto) {
 		System.out.println("insert Member() 처리");
 		mybatis.insert("memberService.insertMember", dto);
+		mybatis.commit();
 	}
 	
 	@Override
