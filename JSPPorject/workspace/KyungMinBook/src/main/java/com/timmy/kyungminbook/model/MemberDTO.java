@@ -9,6 +9,9 @@ public class MemberDTO {
 	@NotBlank(message = "패스워드를 입력 해주세요.")
 	private String pw;
 	
+	@NotBlank(message = "패스워드를 입력 해주세요.")
+	private String checkPw;
+	
 	@NotBlank(message = "이름을 입력 해주세요.")
 	private String name;
 	
@@ -35,6 +38,12 @@ public class MemberDTO {
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
+	}
+	public String getCheckPw() {
+		return checkPw;
+	}
+	public void setCheckPw(String checkPw) {
+		this.checkPw = checkPw;
 	}
 	public String getName() {
 		return name;

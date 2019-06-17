@@ -59,10 +59,10 @@
 						</div>
 
 						<div class="form-group">
-							<label for="password2" class="col-md-3 control-label">비밀번호
-								재입력</label>
+							<label for="checkPw" class="col-md-3 control-label">비밀번호 재입력</label>
 							<div class="col-md-9">
-								<input type="password" class="form-control" name="pw2" placeholder="Repeat Password">
+								<form:input path="checkPw" type="password" class="form-control" name="checkPw" placeholder="Repeat Password" />
+								<form:errors path="checkPw" cssClass="error" />
 							</div>
 						</div>
 
@@ -112,9 +112,6 @@
 					</form:form>
 				</div>
 			</div>
-
-
-
 
 		</div>
 	</div>

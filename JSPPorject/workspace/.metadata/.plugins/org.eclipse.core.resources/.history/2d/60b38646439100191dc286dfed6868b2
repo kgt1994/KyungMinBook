@@ -1,0 +1,133 @@
+package com.timmy.kyungminbook.controller;
+
+import java.util.List;
+import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.timmy.kyungminbook.model.BoardDTO;
+import com.timmy.kyungminbook.model.LoginDTO;
+import com.timmy.kyungminbook.model.MemberDTO;
+import com.timmy.kyungminbook.service.IMemberService;
+
+@Controller
+public class HomeController {
+	@Autowired
+	IMemberService MemberService;
+	@Autowired
+	HttpSession session;
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(Locale locale, Model model) {
+		return "index";
+	}
+	
+	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
+	public String join(@ModelAttribute("memberDTO") MemberDTO memberDTO, Model model) {
+		return "join";
+	}
+	@RequestMapping(value = "/fire.do", method = RequestMethod.GET)
+	public String fire(Locale locale, Model model) {
+		return "fire";
+	}
+	@RequestMapping(value = "/medic.do", method = RequestMethod.GET)
+	public String medic(Locale locale, Model model) {
+		return "medic";
+	}
+	@RequestMapping(value = "/soft.do", method = RequestMethod.GET)
+	public String soft(Locale locale, Model model) {
+		return "soft";
+	}
+	@RequestMapping(value = "/OldBook.do", method = RequestMethod.GET)
+	public String OldBook(Locale locale, Model model) {
+		return "OldBook";
+	}
+	@RequestMapping(value = "/ShoppingCart.do", method = RequestMethod.GET)
+	public String ShoppingCart(Locale locale, Model model) {
+		return "ShoppingCart";
+	}
+	@RequestMapping(value = "/write.do", method = RequestMethod.GET)
+	public String write(Locale locale, Model model) {
+		return "write";
+	}
+	@RequestMapping(value = "/writeOk.do", method = RequestMethod.POST)
+	public String writeOk(BoardDTO boardDTO, Model model) {
+		LoginDTO dto = (LoginDTO)session.getAttribute("member");
+		if(dto.getMember_id().isEmpty()) {
+			return "redirect:board";
+		}else {
+			boardDTO.setMember_id(dto.getMember_id());
+			MemberService.insertBoard(boardDTO);
+			return "redirect:board";
+		}
+	}
+	@RequestMapping(value = "/board.do", method = RequestMethod.GET)
+	public ModelAndView board(Locale locale, Model model) {
+		ModelAndView mv = new ModelAndView("/board");
+        
+        List<BoardDTO> list = MemberService.selectBoard();
+        mv.addObject("list", list);
+		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/joinOk.do", method = RequestMethod.POST)
+	public String joinOk(@Valid MemberDTO memberDTO, BindingResult bindingResult, Model model) {
+		if(bindingResult.hasErrors()) {
+			System.out.println("join error!");
+			if(!(memberDTO.getPw().isEmpty() || memberDTO.getCheckPw().isEmpty()))
+				if(!memberDTO.getPw().equals(memberDTO.getCheckPw())) {
+					bindingResult.rejectValue("checkPw", "nomatch", "비밀번호가 일치하지 않습니다.");
+					System.out.println("비밀번호 불일치");
+				}
+			
+			return "join";
+		}else {
+			try {
+				MemberService.insertMember(memberDTO);
+			}catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				if(!memberDTO.getId().isEmpty()) {
+					bindingResult.rejectValue("id", "duplication", "아이디가 중복 되었습니다.");
+					System.out.println("아이디 중복");
+				}
+				return "join";
+			}
+			
+			return "../../index";
+		}
+		
+	}
+	
+	@RequestMapping(value = "/login.do", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		return "login";
+	}
+	
+	@RequestMapping(value = "/loginOk.do", method = RequestMethod.POST)
+	public String loginOk(LoginDTO dto, HttpServletRequest request) {
+		dto = MemberService.selectMember(dto);
+		
+		if(dto == null) {
+			return "login";
+		}else {
+			session = request.getSession(true);
+			session.setAttribute("member", dto);
+			
+			return "../../index";
+		}
+		
+	}
+}

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 
 <!DOCTYPE html>
@@ -12,22 +12,27 @@
 
 <meta name="viewport" content="width=device-width" initial-scale="1">
 
-<!-- ½ºÅ¸ÀÏ½ÃÆ® ÂüÁ¶  -->
+<!-- ìŠ¤íƒ€ì¼ì‹œíŠ¸ ì°¸ì¡°  -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
     <link rel="stylesheet" href="../resources/css/style.css">
     <link rel="stylesheet" href="../resources/css/responsive.css">
 
-<title>±Û¾²±â</title>
+<title>ê¸€ì“°ê¸°</title>
 
 </head>
-
+<script>
+if("${msg}" != ""){
+	window.alert("${msg}");
+	window.location.href="/login.do";
+}
+</script>
 <body>
 
 	
 
-	<!-- ³×ºñ°ÔÀÌ¼Ç  -->
+	<!-- ë„¤ë¹„ê²Œì´ì…˜  -->
 
 	<nav class="navbar navbar-default">
 
@@ -45,7 +50,7 @@
 
 			</button>
 
-			<a class="navbar-brand" >°Ô½ÃÆÇ</a>
+			<a class="navbar-brand" >ê²Œì‹œíŒ</a>
 
 		</div>
 
@@ -55,20 +60,20 @@
 
 			<ul class="nav navbar-nav">
 
-				<li><a href="index.jsp">¸ÞÀÎ</a></li>
+				<li><a href="index.jsp">ë©”ì¸</a></li>
 			</ul>
 
 		</div>
 
 	</nav>
 
-	<!-- °Ô½ÃÆÇ -->
+	<!-- ê²Œì‹œíŒ -->
 
 	<div class="container">
 
 		<div class="row">
 
-			<form method="post" action="writeOk">
+			<form method="post" action="writeOk.do">
 
 				<table class="table table-striped"
 
@@ -80,9 +85,9 @@
 
 							<th colspan="2"
 
-								style="background-color: #eeeeee; text-align: center;">°Ô½ÃÆÇ
+								style="background-color: #eeeeee; text-align: center;">ê²Œì‹œíŒ
 
-								±Û¾²±â ¾ç½Ä</th>
+								ê¸€ì“°ê¸° ì–‘ì‹</th>
 
 						</tr>
 
@@ -92,13 +97,13 @@
 
 						<tr>
 
-							<td><input type="text" class="form-control" id="board_title" placeholder="±Û Á¦¸ñ" name="bbsTitle" maxlength="50"/></td>
+							<td><input type="text" class="form-control" placeholder="ê¸€ ì œëª©" name="board_title" maxlength="50"/></td>
 
 						</tr>
 
 						<tr>
 
-							<td><textarea class="form-control" id="board_content" placeholder="±Û ³»¿ë" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+							<td><textarea class="form-control" placeholder="ê¸€ ë‚´ìš©" name="board_content" maxlength="2048" style="height: 350px;"></textarea></td>
 
 						</tr>
 
@@ -106,7 +111,7 @@
 
 				</table>	
 
-				<input type="submit" class="btn btn-primary pull-right" value="±Û¾²±â" />
+				<input type="submit" class="btn btn-primary pull-right" value="ê¸€ì“°ê¸°" />
 
 			</form>
 
