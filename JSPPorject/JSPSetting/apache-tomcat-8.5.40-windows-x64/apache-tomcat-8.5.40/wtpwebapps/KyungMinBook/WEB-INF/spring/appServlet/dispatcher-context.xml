@@ -32,6 +32,8 @@
 		</bean> 
 	</mvc:interceptors>
 	
+	<mvc:annotation-driven validator="validator"/>
+	
 	<context:component-scan base-package="com.timmy.kyungminbook.controller" />
 	
 	<mvc:default-servlet-handler />

@@ -4,10 +4,13 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -26,7 +29,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/join.do", method = RequestMethod.GET)
-	public String join(Locale locale, Model model) {
+	public String join(@ModelAttribute("memberDTO") MemberDTO memberDTO, Model model) {
 		return "join";
 	}
 	@RequestMapping(value = "/fire.do", method = RequestMethod.GET)
@@ -63,16 +66,20 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/joinOk.do", method = RequestMethod.POST)
-	public String joinOk(MemberDTO dto) {
+	public String joinOk(@Valid MemberDTO memberDTO, BindingResult bindingResult, Model model) {
 		/*
 		MemberDTO dtos = new MemberDTO();
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		dtos = mapper.selectMember(1);
 		System.out.println(dtos.getEmail());
 		*/
-		MemberService.insertMember(dto);
-		
-		return "../../index";
+		if(bindingResult.hasErrors()) {
+			System.out.println("join error!");
+			return "join";
+		}else {
+			MemberService.insertMember(memberDTO);
+			return "../../index";
+		}
 	}
 	
 	@RequestMapping(value = "/login.do", method = RequestMethod.GET)

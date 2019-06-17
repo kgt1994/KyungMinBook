@@ -1,12 +1,28 @@
 package com.timmy.kyungminbook.model;
 
+import javax.validation.constraints.*;
+
 public class MemberDTO {
+	@NotBlank(message = "아이디를 입력 해주세요.")
 	private String id;
+	
+	@NotBlank(message = "패스워드를 입력 해주세요.")
 	private String pw;
+	
+	@NotBlank(message = "이름을 입력 해주세요.")
 	private String name;
+	
+	@NotBlank(message = "전화번호를 입력 해주세요.")
+    @Pattern(regexp = "[0-9]{10,11}", message = "10~11자리의 숫자만 입력가능합니다")
 	private String phone;
+	
+	
 	private String gender;
+	
+	@NotBlank(message = "메일을 입력 해주세요.")
+    @Email(message = "메일의 양식을 지켜주세요.")
 	private String email;
+	
 	
 	public String getId() {
 		return id;

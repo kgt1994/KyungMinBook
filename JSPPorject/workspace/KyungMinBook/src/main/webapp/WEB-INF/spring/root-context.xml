@@ -30,32 +30,13 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
 	</bean>
+	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.timmy.kyungminbook.service.IMemberService" />
 	</bean>
+	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
-    
-    <bean id = "messageSource" 
-        class="org.springframework.context.support.ReloadableResourceBundleMessageSource" >
- 
-        <!-- 한글출력을 위해 Encoding 지정 -->
-        <property name="defaultEncoding">
-            <value>UTF-8</value>
-        </property>
-        
-        <!-- List이기 대문에 복수 등록이 가능하다. -->        
-        <property name="basenames">
-            <list>
-                <value>labels</value>
-            </list>
-        </property>
-    </bean>
-    
-    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-    	<property name="validationMessageSource" ref="messageSource" />
-	</bean>
-
 
 </beans>

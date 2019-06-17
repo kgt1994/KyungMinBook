@@ -55,6 +55,8 @@ javax.xml.rpc,1.1.0.v201209140446,plugins/javax.xml.rpc_1.1.0.v201209140446/,4,f
 javax.xml.soap,1.2.0.v201005080501,plugins/javax.xml.soap_1.2.0.v201005080501/,4,false
 javax.xml.stream,1.0.1.v201004272200,plugins/javax.xml.stream_1.0.1.v201004272200.jar,4,false
 javax.xml.ws,2.1.0.v200902101523,plugins/javax.xml.ws_2.1.0.v200902101523.jar,4,false
+jp.gr.java_conf.ussiy.app.propedit,6.0.5,plugins/jp.gr.java_conf.ussiy.app.propedit_6.0.5.jar,4,false
+jp.gr.java_conf.ussiy.app.propedit.hyperlink,2.0.0,plugins/jp.gr.java_conf.ussiy.app.propedit.hyperlink_2.0.0.jar,4,false
 net.i2p.crypto.eddsa,0.2.0,plugins/net.i2p.crypto.eddsa_0.2.0.jar,4,false
 net.sourceforge.lpg.lpgjavaruntime,1.1.0.v201004271650,plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v201004271650.jar,4,false
 org.aopalliance,1.0.0.v201105210816,plugins/org.aopalliance_1.0.0.v201105210816.jar,4,false
