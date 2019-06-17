@@ -152,13 +152,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/ganho1.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old1.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">정신건강 간호학</p>
+                                        <p class="title">[중고]전략적 간호관리</p>
 
-                                        <p class="price">37,000원</p>
+                                        <p class="price">13,000원</p>
 
                                     </div>
 
@@ -184,13 +184,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/c.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">c#프로그래밍</p>
+                                        <p class="title">[중고]현대경영학</p>
 
-                                        <p class="price">25,000원</p>
+                                        <p class="price">15,000원</p>
 
                                     </div>
 
@@ -216,13 +216,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old2.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">PHP Web Programming</p>
+                                        <p class="title">[중고]디지털 출판과 저작권</p>
 
-                                        <p class="price">17,000원</p>
+                                        <p class="price">15,000원</p>
 
                                     </div>
 
@@ -248,13 +248,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old3.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">소방학개론</p>
+                                        <p class="title">[중고]국제회계기준 해설</p>
 
-                                        <p class="price">28,000원</p>
+                                        <p class="price">14,000원</p>
 
                                     </div>
 
@@ -286,13 +286,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/ganho1.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old5.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">정신건강 간호학</p>
+                                        <p class="title">[중고]국제관광과이해</p>
 
-                                        <p class="price">37,000원</p>
+                                        <p class="price">12,000원</p>
 
                                     </div>
 
@@ -318,13 +318,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/c.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old6.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">c#프로그래밍</p>
+                                        <p class="title">사회과학 통계분석</p>
 
-                                        <p class="price">25,000원</p>
+                                        <p class="price">14,000원</p>
 
                                     </div>
 
@@ -350,11 +350,11 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old7.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">PHP Web Programming</p>
+                                        <p class="title">공업수학</p>
 
                                         <p class="price">17,000원</p>
 
@@ -381,13 +381,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/old4.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">소방학개론</p>
+                                        <p class="title">[중고]실무해설</p>
 
-                                        <p class="price">28,000원</p>
+                                        <p class="price">16,000원</p>
 
                                     </div>
 

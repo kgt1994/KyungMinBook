@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ page import="java.io.PrintWriter"%>
 
 <!DOCTYPE html>
@@ -12,27 +12,22 @@
 
 <meta name="viewport" content="width=device-width" initial-scale="1">
 
-<!-- Ïä§ÌÉÄÏùºÏãúÌä∏ Ï∞∏Ï°∞  -->
+<!-- Ω∫≈∏¿œΩ√∆Æ ¬¸¡∂  -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
     <link rel="stylesheet" href="../resources/css/style.css">
     <link rel="stylesheet" href="../resources/css/responsive.css">
 
-<title>Í∏ÄÏì∞Í∏∞</title>
+<title>±€æ≤±‚</title>
 
 </head>
-<script>
-if("${msg}" != ""){
-	window.alert("${msg}");
-	window.location.href="/login.do";
-}
-</script>
+
 <body>
 
 	
 
-	<!-- ÎÑ§ÎπÑÍ≤åÏù¥ÏÖò  -->
+	<!-- ≥◊∫Ò∞‘¿Ãº«  -->
 
 	<nav class="navbar navbar-default">
 
@@ -50,7 +45,7 @@ if("${msg}" != ""){
 
 			</button>
 
-			<a class="navbar-brand" >Í≤åÏãúÌåê</a>
+			<a class="navbar-brand" >∞‘Ω√∆«</a>
 
 		</div>
 
@@ -60,20 +55,20 @@ if("${msg}" != ""){
 
 			<ul class="nav navbar-nav">
 
-				<li><a href="index.jsp">Î©îÏù∏</a></li>
+				<li><a href="index.jsp">∏ﬁ¿Œ</a></li>
 			</ul>
 
 		</div>
 
 	</nav>
 
-	<!-- Í≤åÏãúÌåê -->
+	<!-- ∞‘Ω√∆« -->
 
 	<div class="container">
 
 		<div class="row">
 
-			<form method="post" action="writeOk.do">
+			<form method="post" action="writeOk">
 
 				<table class="table table-striped"
 
@@ -85,9 +80,9 @@ if("${msg}" != ""){
 
 							<th colspan="2"
 
-								style="background-color: #eeeeee; text-align: center;">Í≤åÏãúÌåê
+								style="background-color: #eeeeee; text-align: center;">∞‘Ω√∆«
 
-								Í∏ÄÏì∞Í∏∞ ÏñëÏãù</th>
+								±€æ≤±‚ æÁΩƒ</th>
 
 						</tr>
 
@@ -97,13 +92,13 @@ if("${msg}" != ""){
 
 						<tr>
 
-							<td><input type="text" class="form-control" placeholder="Í∏Ä Ï†úÎ™©" name="board_title" maxlength="50"/></td>
+							<td><input type="text" class="form-control" id="board_title" placeholder="±€ ¡¶∏Ò" name="bbsTitle" maxlength="50"/></td>
 
 						</tr>
 
 						<tr>
 
-							<td><textarea class="form-control" placeholder="Í∏Ä ÎÇ¥Ïö©" name="board_content" maxlength="2048" style="height: 350px;"></textarea></td>
+							<td><textarea class="form-control" id="board_content" placeholder="±€ ≥ªøÎ" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
 
 						</tr>
 
@@ -111,7 +106,7 @@ if("${msg}" != ""){
 
 				</table>	
 
-				<input type="submit" class="btn btn-primary pull-right" value="Í∏ÄÏì∞Í∏∞" />
+				<input type="submit" class="btn btn-primary pull-right" value="±€æ≤±‚" />
 
 			</form>
 

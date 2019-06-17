@@ -186,11 +186,11 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/c.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic1.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">c#프로그래밍</p>
+                                        <p class="title">간호연구방법론</p>
 
                                         <p class="price">25,000원</p>
 
@@ -218,13 +218,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic2.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">PHP Web Programming</p>
+                                        <p class="title">간호과정 실무지침</p>
 
-                                        <p class="price">17,000원</p>
+                                        <p class="price">19,000원</p>
 
                                     </div>
 
@@ -250,13 +250,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic3.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">소방학개론</p>
+                                        <p class="title">치과임상실무</p>
 
-                                        <p class="price">28,000원</p>
+                                        <p class="price">30,000원</p>
 
                                     </div>
 
@@ -288,13 +288,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/ganho1.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic4.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">정신건강 간호학</p>
+                                        <p class="title">임상간호와 영양</p>
 
-                                        <p class="price">37,000원</p>
+                                        <p class="price">31,000원</p>
 
                                     </div>
 
@@ -320,11 +320,11 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/c.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic5.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">c#프로그래밍</p>
+                                        <p class="title">보건의료 간호정책</p>
 
                                         <p class="price">25,000원</p>
 
@@ -352,13 +352,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic6.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">PHP Web Programming</p>
+                                        <p class="title">간호영어</p>
 
-                                        <p class="price">17,000원</p>
+                                        <p class="price">12,000원</p>
 
                                     </div>
 
@@ -383,11 +383,11 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/oldmedic7.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">소방학개론</p>
+                                        <p class="title">간호관리학</p>
 
                                         <p class="price">28,000원</p>
 

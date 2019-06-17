@@ -1,7 +1,6 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +16,7 @@
 	type="text/css">
 <link rel="stylesheet" href="../resources/css/style.css">
 <link rel="stylesheet" href="../resources/css/responsive.css">
-<style>
-.error {
-    color: red;
-}
-</style>
+
 </head>
 <body>
 	<div class="container">
@@ -32,45 +27,41 @@
 
 				</div>
 				<div class="panel-body">
-					<form:form commandName="memberDTO" name="memberDTO" class="form-horizontal" role="form" action="joinOk.do" method="post">
+					<form id="signupform" class="form-horizontal" role="form" action="joinOk.do" method="post">
 
 						<div class="form-group">
 							<label for="id" class="col-md-3 control-label">아이디</label>
 							<div class="col-md-9">
-								<form:input path="id" type="text" class="form-control" name="id" placeholder="ID" />
-								<form:errors path="id" cssClass="error"/>
+								<input type="text" class="form-control" name="id" placeholder="ID">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="fulltname" class="col-md-3 control-label">이름</label>
 							<div class="col-md-9">
-								<form:input path="name" type="text" class="form-control" name="name" placeholder="Full Name"/>
-								<form:errors path="name" cssClass="error"/>
+								<input type="text" class="form-control" name="name" placeholder="Full Name">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="password" class="col-md-3 control-label">비밀번호</label>
 							<div class="col-md-9">
-								<form:input path="pw" type="password" class="form-control" name="pw" placeholder="Password"/>
-								<form:errors path="pw" cssClass="error"/>
+								<input type="password" class="form-control" name="pw" placeholder="Password">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="checkPw" class="col-md-3 control-label">비밀번호 재입력</label>
+							<label for="password2" class="col-md-3 control-label">비밀번호
+								재입력</label>
 							<div class="col-md-9">
-								<form:input path="checkPw" type="password" class="form-control" name="checkPw" placeholder="Repeat Password" />
-								<form:errors path="checkPw" cssClass="error" />
+								<input type="password" class="form-control" name="pw2" placeholder="Repeat Password">
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label for="phone" class="col-md-3 control-label">전화번호</label>
 							<div class="col-md-9">
-								<form:input path="phone" type="text" class="form-control" name="phone" placeholder="Phone Number"/>
-								<form:errors path="phone" cssClass="error"/>
+								<input type="text" class="form-control" name="phone" placeholder="Phone Number">
 							</div>
 						</div>
 
@@ -85,8 +76,7 @@
 						<div class="form-group">
 							<label for="email" class="col-md-3 control-label">이메일</label>
 							<div class="col-md-9">
-								<form:input path="email" type="text" class="form-control" name="email" placeholder="Email Address"/>
-								<form:errors path="email" cssClass="error"/>
+								<input type="text" class="form-control" name="email" placeholder="Email Address">
 							</div>
 						</div>
 
@@ -109,9 +99,12 @@
 							</div>
 						</div>
 
-					</form:form>
+					</form>
 				</div>
 			</div>
+
+
+
 
 		</div>
 	</div>

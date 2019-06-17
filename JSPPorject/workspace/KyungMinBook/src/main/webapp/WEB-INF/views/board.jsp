@@ -1,6 +1,5 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"    pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 
@@ -102,13 +101,7 @@
 
 				</thead>
 
-				<c:forEach items="${list}" var="board">
-					<tr>
-						<td>${board.board_number}
-						<td><a href='<c:url value='/boardDetail?idx=${board.board_number}'/>'>${board.board_title}</a>
-						<td>${board.member_id}
-						<td>${board.board_time}
-				</c:forEach>
+				
 			</table>	
 
 			<a href = "write.do" class="btn btn-primary pull-right">글쓰기</a>

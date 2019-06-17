@@ -139,7 +139,7 @@
 
                 <ul class="nav nav-tabs nav-product-tabs">
 
-                    <li class="active"><a href="#trending" data-toggle="tab">융합소프트웨어과</a></li>
+                    <li class="active"><a href="#trending" data-toggle="tab">소프트웨어과</a></li>
                    
 
                 </ul>
@@ -154,43 +154,11 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/ganho1.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/soft1.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">정신건강 간호학</p>
-
-                                        <p class="price">37,000원</p>
-
-                                    </div>
-
-                                    <div class="product-hover">
-
-                                        <ul>
-
-                                            <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-3 col-sm-4">
-
-                            <div class="single-product">
-
-                                <div class="product-block">
-
-                                    <img src="../resources/images/c.jpg" alt="" class="thumbnail">
-
-                                    <div class="product-description text-center">
-
-                                        <p class="title">c#프로그래밍</p>
+                                        <p class="title">유니티 게임프로그래밍</p>
 
                                         <p class="price">25,000원</p>
 
@@ -218,13 +186,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/soft2.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">PHP Web Programming</p>
+                                        <p class="title">Z80프로그래밍</p>
 
-                                        <p class="price">17,000원</p>
+                                        <p class="price">19,000원</p>
 
                                     </div>
 
@@ -250,13 +218,45 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/soft3.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">소방학개론</p>
+                                        <p class="title">안드로이드</p>
 
                                         <p class="price">28,000원</p>
+
+                                    </div>
+
+                                    <div class="product-hover">
+
+                                        <ul>
+
+                                            <li><a href="#"><i class="fa fa-cart-arrow-down"></i></a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3 col-sm-4">
+
+                            <div class="single-product">
+
+                                <div class="product-block">
+
+                                    <img src="../resources/images/soft4.jpg" alt="" class="thumbnail">
+
+                                    <div class="product-description text-center">
+
+                                        <p class="title">프로그래밍 입문</p>
+
+                                        <p class="price">25,000원</p>
 
                                     </div>
 
@@ -288,13 +288,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/ganho1.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/soft5.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">정신건강 간호학</p>
+                                        <p class="title">프로그래밍 가이드북</p>
 
-                                        <p class="price">37,000원</p>
+                                        <p class="price">24,000원</p>
 
                                     </div>
 
@@ -326,7 +326,7 @@
 
                                         <p class="title">c#프로그래밍</p>
 
-                                        <p class="price">25,000원</p>
+                                        <p class="price">28,000원</p>
 
                                     </div>
 
@@ -352,13 +352,13 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/jsp.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">PHP Web Programming</p>
+                                        <p class="title">jsp웹프로그래밍</p>
 
-                                        <p class="price">17,000원</p>
+                                        <p class="price">21,000원</p>
 
                                     </div>
 
@@ -383,11 +383,11 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="../resources/images/java.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
-                                        <p class="title">소방학개론</p>
+                                        <p class="title">JAVA프로그래밍</p>
 
                                         <p class="price">28,000원</p>
 

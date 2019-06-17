@@ -13,22 +13,5 @@
 		FROM MEMBER
 		WHERE MEMBER_ID=#{member_id} AND MEMBER_PW=#{member_pw}
 	</select>
-	
-	<insert id="insertBoard" parameterType="BoardDTO">
-		INSERT INTO BOARD(BOARD_NUMBER, BOARD_TITLE, BOARD_CONTENT, MEMBER_ID)
-		VALUES ((SELECT NVL(MAX(BOARD_NUMBER), 0) + 1 FROM BOARD),#{board_title},#{board_content},#{member_id})
-	</insert>
-	
-	<select id="selectBoard" resultType="BoardDTO">
-		SELECT *
-		FROM BOARD
-		ORDER BY BOARD_NUMBER DESC
-	</select>
-	
-	<select id="selectBoardDetail" parameterType="Integer" resultType="BoardDTO">
-		SELECT *
-		FROM BOARD
-		WHERE BOARD_NUMBER=#{num}
-	</select>
 
 </mapper>
