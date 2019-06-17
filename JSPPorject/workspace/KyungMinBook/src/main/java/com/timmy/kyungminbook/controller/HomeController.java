@@ -53,6 +53,10 @@ public class HomeController {
 	public String write(Locale locale, Model model) {
 		return "write";
 	}
+	@RequestMapping(value = "/writeOk.do", method = RequestMethod.POST)
+	public String writeOk(Locale locale, Model model) {
+		return "board";
+	}
 	@RequestMapping(value = "/board.do", method = RequestMethod.GET)
 	public String board(Locale locale, Model model) {
 		return "board";

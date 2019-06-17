@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;KyungMinBook/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml&apos; to &apos;dispatcher-context.xml&apos;" description="Rename resource &apos;servlet-context.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" name="dispatcher-context.xml" stamp="1560748171901" updateReferences="true"/>
+</session>
