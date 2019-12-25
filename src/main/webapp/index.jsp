@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Raleway:400,300,500,700,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="../resources/css/style.css">
-    <link rel="stylesheet" href="../resources/css/responsive.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="./resources/css/responsive.css">
 </head>
 <body>
 
@@ -52,7 +52,7 @@
                     <div class="logo">
 
                         <a href="index.jsp">
-                            <img src="../resources/images/logo.jpg" >
+                            <img src="./resources/images/logo.jpg" >
                         </a>
 
                     </div>
@@ -146,7 +146,7 @@
                 </ul>
                 <div class="col-md-4 col-sm-4">
 
-                    <div class="single-banner" style="background-image:url(../resources/images/java.jpg)">
+                    <div class="single-banner" style="background-image:url(./resources/images/java.jpg)">
                         
                        <div class="banner-caption">
                             <a href="" class="btn btn-theme">사러가기</a>
@@ -159,7 +159,7 @@
               
                 <div class="col-md-4 col-sm-4">
 
-                    <div class="single-banner" style="background-image:url(../resources/images/jsp.jpg)">
+                    <div class="single-banner" style="background-image:url(./resources/images/jsp.jpg)">
                         
                        <div class="banner-caption">
 
@@ -173,7 +173,7 @@
                  
                 <div class="col-md-4 col-sm-4">
 
-                    <div class="single-banner" style="background-image:url(../resources/images/and.jpg)">
+                    <div class="single-banner" style="background-image:url(./resources/images/and.jpg)">
                         
                        <div class="banner-caption">
                             <a href="" class="btn btn-theme">사러가기</a>
@@ -210,7 +210,7 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/ganho1.jpg" alt="" class="thumbnail">
+                                    <img src="./resources/images/ganho1.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -243,7 +243,7 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/c.jpg" alt="" class="thumbnail">
+                                    <img src="./resources/images/c.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -275,7 +275,7 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/php.jpg" alt="" class="thumbnail">
+                                    <img src="./resources/images/php.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
@@ -306,7 +306,7 @@
 
                                 <div class="product-block">
 
-                                    <img src="../resources/images/fire.jpg" alt="" class="thumbnail">
+                                    <img src="./resources/images/fire.jpg" alt="" class="thumbnail">
 
                                     <div class="product-description text-center">
 
