@@ -1,7 +1,0 @@
-INDEX VERSION 1.131
-D:\svn\repos\JSPPorject\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\982866395.index
-\KyungMinBook\src\main\java
-D:\svn\repos\JSPPorject\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2854070295.index
-\KyungMinBook\src\main\java
-D:\svn\repos\JSPPorject\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2815167204.index
-\KyungMinBook\src\main\java

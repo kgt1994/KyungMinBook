@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.timmy.kyungminbook.model.MemberDTO" alias="MemberDTO"></typeAlias>
+		<typeAlias type="com.timmy.kyungminbook.service.IMemberService" alias="memberService"></typeAlias>
+		<typeAlias type="com.timmy.kyungminbook.model.LoginDTO" alias="LoginDTO"></typeAlias>
+		<typeAlias type="com.timmy.kyungminbook.model.BoardDTO" alias="BoardDTO"></typeAlias>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="sqlmap/MemberMapper.xml" />
+		<mapper resource="sqlmap/BoardMapper.xml" />
+	</mappers>
+</configuration>
